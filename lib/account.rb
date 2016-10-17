@@ -1,13 +1,13 @@
-require "./lib/statement"
+require "./lib/statement_engine"
 require "./lib/transaction_log"
 
 class Account
 
   OPENING_BALANCE = 0;
 
-  def initialize(transaction_log: TransactionLog.new, statement: Statement.new, opening_balance: OPENING_BALANCE)
+  def initialize(transaction_log: TransactionLog.new, statement_engine: StatementEngine.new, opening_balance: OPENING_BALANCE)
     @transaction_log = transaction_log
-    @statement = statement
+    @statement_engine = statement_engine
     @balance = opening_balance
   end
 
@@ -21,9 +21,7 @@ class Account
     @balance -= amount
   end
 
-  def print_statement()
-
+  def print_statement
+    @statement_engine.print_statement(@transaction_log)
   end
-
-
 end

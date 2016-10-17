@@ -3,9 +3,9 @@ require 'account'
 describe Account do
 
   let(:transaction_log) {double(:transaction_log, deposit: true, withdraw: true)}
-  let(:statement) {double :statement}
-  subject(:account1) {described_class.new(transaction_log: transaction_log, statement: statement)}
-  subject(:account2) {described_class.new(transaction_log: transaction_log, statement: statement, opening_balance: 10)}
+  let(:statement_engine) {double(statement_engine: true)}
+  subject(:account1) {described_class.new(transaction_log: transaction_log, statement_engine: statement_engine)}
+  subject(:account2) {described_class.new(transaction_log: transaction_log, statement_engine: statement_engine, opening_balance: 10)}
 
   context "balance" do
     it "starts with 0 as opening balance if account instantiated w/o opening balance" do
@@ -42,7 +42,10 @@ describe Account do
   end
 
   context "#print_statement" do
-
+    it "calls the print_statement method on the statement engine" do
+      expect(statement_engine).to receive(:print_statement)
+      account1.print_statement
+    end
   end
 
 end
