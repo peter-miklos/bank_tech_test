@@ -12,4 +12,8 @@ class Transaction
     @amount
   end
 
+  def type
+    @type
+  end
+
 end

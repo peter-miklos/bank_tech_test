@@ -16,7 +16,13 @@ describe Transaction do
   end
 
   context "#type" do
+    it "returns the type of a deposit transaction" do
+      expect(deposit_tr.type).to eq :deposit
+    end
 
+    it "returns the type of a withdraw transaction" do
+      expect(withdraw_tr.type).to eq :withdraw
+    end
   end
 
   context "#date" do
