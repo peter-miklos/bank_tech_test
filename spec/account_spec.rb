@@ -20,4 +20,8 @@ describe Account do
     end
   end
 
+  context "#print_statement" do
+    
+  end
+
 end

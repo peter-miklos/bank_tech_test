@@ -16,5 +16,8 @@ class Account
     @transaction_log.withdraw(amount)
   end
 
+  def print_statement
+  end
+
 
 end
