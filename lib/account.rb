@@ -8,5 +8,13 @@ class Account
     @statement = statement
   end
 
+  def deposit(amount)
+    @transaction_log.deposit(amount)
+  end
+
+  def withdraw(amount)
+    @transaction_log.withdraw(amount)
+  end
+
 
 end

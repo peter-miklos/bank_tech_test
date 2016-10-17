@@ -9,12 +9,15 @@ describe Account do
   context "#deposit" do
     it "calls the deposit method on the transaction_log" do
       expect(transaction_log).to receive(:deposit)
-      account.deposit
+      account.deposit(1000)
     end
   end
 
   context "#withdrawn" do
-
+    it "calls the withdraw method on the transaction_log" do
+      expect(transaction_log).to receive(:withdraw)
+      account.withdraw(1000)
+    end
   end
 
 end
