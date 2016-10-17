@@ -1,3 +1,5 @@
+require './lib/transaction'
+
 class TransactionLog
 
   def initialize(transaction_class = Transaction)
