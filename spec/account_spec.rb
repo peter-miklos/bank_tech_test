@@ -4,19 +4,30 @@ describe Account do
 
   let(:transaction_log) {double(:transaction_log, deposit: true)}
   let(:statement) {double :statement}
-  subject(:account) {described_class.new(transaction_log: transaction_log, statement: statement)}
+  subject(:account1) {described_class.new(transaction_log: transaction_log, statement: statement)}
+  subject(:account2) {described_class.new(transaction_log: transaction_log, statement: statement, opening_balance: 10)}
+
+  context "balance" do
+    it "starts with 0 as opening balance if account instantiated w/o opening balance" do
+      expect(account1.instance_variable_get(:@balance)).to eq 0
+    end
+
+    it "starts with 10 as opening balance if account instantiated with 10 opening balance" do
+      expect(account2.instance_variable_get(:@balance)).to eq 10
+    end
+  end
 
   context "#deposit" do
     it "calls the deposit method on the transaction_log" do
       expect(transaction_log).to receive(:deposit)
-      account.deposit(1000)
+      account1.deposit(1000)
     end
   end
 
   context "#withdrawn" do
     it "calls the withdraw method on the transaction_log" do
       expect(transaction_log).to receive(:withdraw)
-      account.withdraw(1000)
+      account1.withdraw(1000)
     end
   end
 

@@ -3,9 +3,12 @@ require "./lib/transaction_log"
 
 class Account
 
-  def initialize(transaction_log: TransactionLog.new, statement: Statement.new)
+  OPENING_BALANCE = 0;
+
+  def initialize(transaction_log: TransactionLog.new, statement: Statement.new, opening_balance: OPENING_BALANCE)
     @transaction_log = transaction_log
     @statement = statement
+    @balance = opening_balance
   end
 
   def deposit(amount)
