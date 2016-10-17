@@ -6,9 +6,12 @@ class TransactionLog
   end
 
   def deposit(amount)
-    @transactions.push(create_transaction(amount, "deposit"))
+    @transactions << create_transaction(amount, :deposit)
   end
 
+  def withdraw(amount)
+    @transactions << create_transaction(amount, :withdraw)
+  end
 
   private
 
