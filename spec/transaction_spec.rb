@@ -27,5 +27,16 @@ describe Transaction do
 
   context "#date" do
 
+    before do
+      @current_date = Date.new
+    end
+
+    it "returns the date of deposit transaction" do
+      expect(deposit_tr.date).to eq @current_date
+    end
+
+    it "returns the date of the withdraw transaction" do
+      expect(withdraw_tr.date).to eq @current_date
+    end
   end
 end

@@ -16,4 +16,8 @@ class Transaction
     @type
   end
 
+  def date
+    @date
+  end
+
 end
