@@ -13,10 +13,12 @@ class Account
 
   def deposit(amount)
     @transaction_log.deposit(amount)
+    @balance += amount
   end
 
   def withdraw(amount)
     @transaction_log.withdraw(amount)
+    @balance -= amount
   end
 
   def print_statement()
