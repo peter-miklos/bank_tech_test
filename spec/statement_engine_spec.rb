@@ -10,7 +10,8 @@ describe StatementEngine do
   context "#print_statement" do
     it "prints out the statement with header" do
       result = "date || credit || debit || balance\n13/10/2016 || 1000.00 || || 1200.00\n17/10/2016 || || 500.00 || 700.00"
-      expect(statement_engine.print_statement(transaction_log)).to eq result
+      expect(STDOUT).to receive(:puts).with(result)
+      statement_engine.print_statement(transaction_log)      
     end
   end
 end

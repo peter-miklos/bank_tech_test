@@ -15,6 +15,10 @@ class TransactionLog
     @transactions << create_transaction(amount, new_balance, :debit)
   end
 
+  def transactions
+    @transactions
+  end
+
   private
 
   def create_transaction(amount, new_balance, type)

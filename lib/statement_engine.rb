@@ -4,7 +4,7 @@ class StatementEngine
   end
 
   def print_statement(transaction_log)
-    add_header + add_statement_content(transaction_log)
+    puts add_header + add_statement_content(transaction_log)
   end
 
   private
