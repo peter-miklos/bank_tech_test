@@ -16,7 +16,7 @@ class StatementEngine
   end
 
   def add_statement_content(transaction_log)
-    transactions = transaction_log.transactions.sort_by {|tr| tr.date}.reverse
+    transactions = transaction_log.get_transactions.sort_by {|tr| tr.date}.reverse
     transactions.map do |tr|
       "#{tr.date.strftime("%d/%m/%Y")} || #{add_credit_amount(tr)}|| #{add_debit_amount(tr)}|| #{sprintf('%.2f', tr.balance)}"
     end.join("\n")

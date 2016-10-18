@@ -18,8 +18,8 @@ class TransactionLog
     @transactions << create_transaction(amount, new_balance, :debit)
   end
 
-  def transactions
-    @transactions
+  def get_transactions
+    @transactions.dup
   end
 
   private

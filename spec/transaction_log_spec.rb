@@ -42,9 +42,9 @@ describe TransactionLog do
   end
 
   context "#transactions" do
-    it "returns the array of transactions" do
+    it "returns a copy of the array of transactions" do
       transaction_log.deposit(1000, 1200)
-      expect(transaction_log.transactions).to eq [transaction]
+      expect(transaction_log.get_transactions).to eq [transaction]
     end
   end
 end
