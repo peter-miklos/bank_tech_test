@@ -78,8 +78,13 @@ StatementEngine
 TransactionLog
   #deposit
     create credit transaction and add it to transactions array
+    raises error if amount is not a Fixnum
+    raises error if amount < 1
   #withdraw
     creates debit transaction and add it to transactions array
+    raises error if amount is not a Fixnum
+    raises error if amount < 1
+    raises error if the new_balance < 0
   #transactions
     returns the array of transactions
 
@@ -96,5 +101,4 @@ Transaction
   #balance
     returns the balance after the credit transaction is created
     returns the balance after the debit transaction is created
-
 ```

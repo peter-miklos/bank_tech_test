@@ -12,7 +12,7 @@ describe TransactionLog do
       expect(transaction_log.instance_variable_get(:@transactions)).to include(transaction)
     end
 
-    it "raises error if amount is not an integer" do
+    it "raises error if amount is not an Fixnum" do
       expect {transaction_log.deposit("300", 200)}.to raise_error(RuntimeError)
     end
 
@@ -28,7 +28,7 @@ describe TransactionLog do
       expect(transaction_log.instance_variable_get(:@transactions)).to include(transaction)
     end
 
-    it "raises error if amount is not an integer" do
+    it "raises error if amount is not an Fixnum" do
       expect {transaction_log.withdraw("300", 200)}.to raise_error(RuntimeError)
     end
 
