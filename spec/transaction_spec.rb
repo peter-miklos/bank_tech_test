@@ -2,8 +2,8 @@ require 'transaction'
 
 describe Transaction do
 
-  subject(:deposit_tr) {described_class.new(1000, 1200, :deposit)}
-  subject(:withdraw_tr) {described_class.new(500, 700, :withdraw)}
+  subject(:deposit_tr) {described_class.new(1000, 1200, :credit)}
+  subject(:withdraw_tr) {described_class.new(500, 700, :debit)}
 
   context "#amount" do
     it "returns the deposit amount" do
@@ -17,11 +17,11 @@ describe Transaction do
 
   context "#type" do
     it "returns the type of a deposit transaction" do
-      expect(deposit_tr.type).to eq :deposit
+      expect(deposit_tr.type).to eq :credit
     end
 
     it "returns the type of a withdraw transaction" do
-      expect(withdraw_tr.type).to eq :withdraw
+      expect(withdraw_tr.type).to eq :debit
     end
   end
 

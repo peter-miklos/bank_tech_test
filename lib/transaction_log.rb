@@ -8,11 +8,11 @@ class TransactionLog
   end
 
   def deposit(amount, new_balance)
-    @transactions << create_transaction(amount, new_balance, :deposit)
+    @transactions << create_transaction(amount, new_balance, :credit)
   end
 
   def withdraw(amount, new_balance)
-    @transactions << create_transaction(amount, new_balance, :withdraw)
+    @transactions << create_transaction(amount, new_balance, :debit)
   end
 
   private
