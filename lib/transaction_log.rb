@@ -7,18 +7,18 @@ class TransactionLog
     @transaction_class = transaction_class
   end
 
-  def deposit(amount)
-    @transactions << create_transaction(amount, :deposit)
+  def deposit(amount, new_balance)
+    @transactions << create_transaction(amount, new_balance, :deposit)
   end
 
-  def withdraw(amount)
-    @transactions << create_transaction(amount, :withdraw)
+  def withdraw(amount, new_balance)
+    @transactions << create_transaction(amount, new_balance, :withdraw)
   end
 
   private
 
-  def create_transaction(amount, type)
-    @transaction_class.new(amount, type)
+  def create_transaction(amount, new_balance, type)
+    @transaction_class.new(amount, new_balance, type)
   end
 
 end

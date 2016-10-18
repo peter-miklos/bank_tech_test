@@ -8,14 +8,14 @@ describe TransactionLog do
 
   context "#deposit" do
     it "create deposit transaction and add it to transactions array" do
-      transaction_log.deposit(1000)
+      transaction_log.deposit(1000, 1200)
       expect(transaction_log.instance_variable_get(:@transactions)).to include(transaction)
     end
   end
 
   context "#withdraw" do
     it "creates withdraw transaction and add it to transactions array" do
-      transaction_log.withdraw(1000)
+      transaction_log.withdraw(1000, 200)
       expect(transaction_log.instance_variable_get(:@transactions)).to include(transaction)
     end
   end

@@ -12,13 +12,15 @@ class Account
   end
 
   def deposit(amount)
-    @transaction_log.deposit(amount)
-    @balance += amount
+    new_balance = @balance + amount
+    @transaction_log.deposit(amount, new_balance)
+    @balance = new_balance
   end
 
   def withdraw(amount)
-    @transaction_log.withdraw(amount)
-    @balance -= amount
+    new_balance = @balance - amount
+    @transaction_log.withdraw(amount, new_balance)
+    @balance = new_balance
   end
 
   def print_statement

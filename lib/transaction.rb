@@ -2,9 +2,10 @@
 
 class Transaction
 
-  def initialize(amount, type)
+  def initialize(amount, balance, type)
     @amount = amount
     @type = type
+    @balance = balance
     @date = Time.new
   end
 
@@ -18,6 +19,10 @@ class Transaction
 
   def date
     @date
+  end
+
+  def balance
+    @balance
   end
 
 end
