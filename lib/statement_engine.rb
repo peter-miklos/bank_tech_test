@@ -14,10 +14,10 @@ class StatementEngine
   end
 
   def add_statement_content(transaction_log)
-    transaction_log.transactions.map do |tr|
+    transaction_log.transactions.sort_by {|tr| tr.date}.reverse.map do |tr|
       if tr.type == :credit
         "#{tr.date.strftime("%d/%m/%Y")} || #{sprintf('%.2f', tr.amount)} || || #{sprintf('%.2f', tr.balance)}"
-      else
+      elsif tr.type == :debit
         "#{tr.date.strftime("%d/%m/%Y")} || || #{sprintf('%.2f', tr.amount)} || #{sprintf('%.2f', tr.balance)}"
       end
     end.join("\n")
