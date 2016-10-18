@@ -1,3 +1,4 @@
+# Understands how to manage transactions
 require './lib/transaction'
 
 class TransactionLog

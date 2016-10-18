@@ -6,21 +6,21 @@ describe Transaction do
   subject(:withdraw_tr) {described_class.new(500, 700, :debit)}
 
   context "#amount" do
-    it "returns the deposit amount" do
+    it "returns the credit amount" do
       expect(deposit_tr.amount).to eq 1000
     end
 
-    it "returns the withdrawal amount" do
+    it "returns the debit amount" do
       expect(withdraw_tr.amount).to eq 500
     end
   end
 
   context "#type" do
-    it "returns the type of a deposit transaction" do
+    it "returns the type of a credit transaction" do
       expect(deposit_tr.type).to eq :credit
     end
 
-    it "returns the type of a withdraw transaction" do
+    it "returns the type of a debit transaction" do
       expect(withdraw_tr.type).to eq :debit
     end
   end
@@ -31,11 +31,11 @@ describe Transaction do
       @current_date = Time.new.strftime("%F")
     end
 
-    it "returns the date of deposit transaction" do
+    it "returns the date of credit transaction" do
       expect(deposit_tr.date.strftime("%F")).to eq @current_date
     end
 
-    it "returns the date of the withdraw transaction" do
+    it "returns the date of the debit transaction" do
       expect(withdraw_tr.date.strftime("%F")).to eq @current_date
     end
   end

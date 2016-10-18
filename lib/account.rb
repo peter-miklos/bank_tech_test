@@ -1,3 +1,4 @@
+# Understands how to interact with the user
 require "./lib/statement_engine"
 require "./lib/transaction_log"
 

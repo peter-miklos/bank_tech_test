@@ -1,3 +1,5 @@
+# Understands how to create an account statement
+
 class StatementEngine
 
   def initialize

@@ -12,13 +12,13 @@ describe Account do
       expect(account1.instance_variable_get(:@balance)).to eq 0
     end
 
-    it "starts with 10 as opening balance if account instantiated with 10 opening balance" do
+    it "starts with 10 as opening balance if account instantiated with 10 units" do
       expect(account2.instance_variable_get(:@balance)).to eq 10
     end
   end
 
   context "#deposit" do
-    it "calls the deposit method on the transaction_log" do
+    it "calls the deposit method on transaction_log" do
       expect(transaction_log).to receive(:deposit)
       account1.deposit(1000)
     end
@@ -30,7 +30,7 @@ describe Account do
   end
 
   context "#withdrawn" do
-    it "calls the withdraw method on the transaction_log" do
+    it "calls the withdraw method on transaction_log" do
       expect(transaction_log).to receive(:withdraw)
       account1.withdraw(1000)
     end
