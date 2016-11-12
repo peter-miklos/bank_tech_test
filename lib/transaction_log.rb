@@ -29,9 +29,9 @@ class TransactionLog
   end
 
   def validate_params(amount, new_balance)
-    raise "Transaction value must be a number" if amount.class != Fixnum
-    raise "Transaction value must be higher than zero" if amount < 1
-    raise "Balance cannot be negative" if new_balance < 0
+    raise "Transaction value must be a number" unless amount.class == Fixnum || amount.class == Float
+    raise "Transaction value must be higher than zero" unless amount > 0
+    raise "Balance cannot be negative" unless new_balance >= 0
   end
 
 end
