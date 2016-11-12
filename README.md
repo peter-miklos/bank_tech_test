@@ -1,9 +1,9 @@
-Bank Tech Test
+Bank Tech Test in Ruby
 =================
 
 Description:
 -------
-The program acts as a basic little account keeping solution. It lets user to create an account, make debit and credit transactions, and print a statement. The program manages the current balance as well.
+The program acts as a simple account keeping solution. It lets user to create an account, make debit and credit transactions, and print a statement. The program manages the current balance as well.
 
 ### Instructions for how to run the program
 
