@@ -29,7 +29,7 @@ describe Account do
     end
   end
 
-  context "#withdrawn" do
+  context "#withdraw" do
     it "calls the withdraw method on transaction_log" do
       expect(transaction_log).to receive(:withdraw)
       account1.withdraw(1000)
